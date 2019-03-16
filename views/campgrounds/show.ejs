@@ -11,7 +11,7 @@
       <!-- MAP -->
     </div>
     <div class="col-md-9">
-      <div class="card">
+      <div class="card pb-2">
         <img
           src="<%= campground.image %>"
           class="card-img-top img-responsive"
@@ -53,7 +53,7 @@
         </div>
         <hr />
         <% campground.comments.forEach(function(comment){ %>
-        <div class="row px-3">
+        <div class="row p-3 comment">
           <div class="col-md12 w-100">
             <span class="text-capitalize"><strong><%= comment.author.username %></strong></span>
             <span class="float-right">10 days ago</span>

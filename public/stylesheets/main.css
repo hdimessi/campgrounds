@@ -54,3 +54,11 @@
   /*border is optional*/
   cursor: pointer;
 }
+
+.comment:nth-child(2n) {
+  background-color: #e7e7e7;
+}
+
+.list-group-item {
+  cursor: pointer;
+}
