@@ -8,15 +8,12 @@ express().use(bodyParser.urlencoded({ extended: true }));
 
 // INDEX - GET ALL CAMPGROUNDS
 router.get("/", function(req, res) {
-  var error = req.app.locals.error;
-  req.app.locals.error = null;
   Campground.find({}, function(err, campgrounds) {
     if (err) {
       console.log("err-->" + err);
     } else {
       res.render("campgrounds/index", {
-        campgrounds: campgrounds,
-        error: error
+        campgrounds: campgrounds
       });
     }
   });

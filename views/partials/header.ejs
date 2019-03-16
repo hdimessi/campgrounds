@@ -50,6 +50,13 @@
         </ul>
       </div>
     </nav>
+
+    <% if(error != null && error.header != null) { %>
+      <div class="alert <%= error.header.style %> mt-3" role="alert">
+        <%= error.header.content %>
+      </div>
+      <% } %>
+
     <div id="overlay"></div>
     <% include loginForm %> 
     <% include registerForm %> 

@@ -45,7 +45,7 @@ middlewareObj.isLoggedIn = function(req, res, next) {
     style: "alert-danger",
     content: "You need to be logged in to do that"
   }};
-  res.redirect("/campgrounds");
+  res.redirect("back");
 };
 
 module.exports = middlewareObj;

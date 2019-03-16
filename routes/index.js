@@ -22,7 +22,7 @@ router.post("/register", function(req, res) {
       return res.redirect("back");
     }
     passport.authenticate("local")(req, res, function() {
-      res.redirect("/campgrounds");
+      res.redirect("back");
     });
   });
 });
@@ -65,8 +65,12 @@ router.post("/login", function(req, res) {
 });
 
 router.get("/logout", function(req, res) {
+  req.app.locals.error = {header: {
+    style: "alert-success",
+    content: "You ve been logged out successfully"
+  }};
   req.logout();
-  res.redirect("/campgrounds");
+  res.redirect("back");
 });
 
 module.exports = router;
