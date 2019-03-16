@@ -23,7 +23,7 @@
           <p>
             <em
               >Submitted By
-              <strong><%= campground.author.username %></strong></em
+              <strong class="text-capitalize"><%= campground.author.username %></strong></em
             >
           </p>
           <% if(currentUser && campground.author.id.equals(currentUser._id)) {
@@ -55,13 +55,10 @@
         <% campground.comments.forEach(function(comment){ %>
         <div class="row px-3">
           <div class="col-md12 w-100">
-            <span class=""
-              ><strong><%= comment.author.username %></strong></span
-            >
+            <span class="text-capitalize"><strong><%= comment.author.username %></strong></span>
             <span class="float-right">10 days ago</span>
             <p class="text-muted"><%= comment.text %></p>
-            <% if(currentUser && comment.author.id.equals(currentUser._id)) {
-            %>
+            <% if(currentUser && comment.author.id.equals(currentUser._id)) { %>
             <a
               class="float-right mx-2"
               href="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>/edit"
