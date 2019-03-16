@@ -41,6 +41,10 @@ middlewareObj.isLoggedIn = function(req, res, next) {
   if (req.isAuthenticated()) {
     return next();
   }
+  req.app.locals.error = {login: {
+    style: "alert-danger",
+    content: "You need to be logged in to do that"
+  }};
   res.redirect("/campgrounds");
 };
 

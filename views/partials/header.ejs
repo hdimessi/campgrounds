@@ -36,13 +36,13 @@
         <ul class="navbar-nav">
           <li class="nav-item">
             <% if (!currentUser) { %>
-            <a class="nav-link" id="login-btn" href="#">Login</a>
+            <a class="nav-link" id="login-btn" href="javascript:;">Login</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" id="register-btn" href="#">Sign Up</a>
+            <a class="nav-link" id="register-btn" href="javascript:;">Sign Up</a>
           </li>
           <% } else { %>
-            <li class="nav-item"><a class="nav-link" href="#">Signed In As <span class="text-capitalize"><%= currentUser.username %></span></a></li>
+            <li class="nav-item"><a class="nav-link" href="javascript:;">Signed In As <span class="text-capitalize"><%= currentUser.username %></span></a></li>
           <li class="nav-item">
             <a class="nav-link" href="/logout">Logout</a>
           </li>

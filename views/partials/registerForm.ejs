@@ -1,8 +1,14 @@
 
 <div class="form-popup rounded" id="register">
     <form action="/register" method="POST" class="form-container">
+      <% if(error != null && error.register != null) { %>
+        <% var auxError = error.register %>
+        <div class="alert <%= auxError.style %>" role="alert">
+          <%= auxError.content %>
+        </div>
+        <% } %>
       <div class="form-group">
-      <label for="username"><b>Email</b></label>
+      <label for="username"><b>Username</b></label>
       <input class="form-control" type="text" placeholder="Enter Email" name="username" required>
       </div>
       
@@ -10,6 +16,6 @@
       <label for="password"><b>Password</b></label>
       <input class="form-control" type="password" placeholder="Enter Password" name="password" required>
       </div>
-      <button type="submit" class="btn btn-primary rounded-pill">Sign Up</button>
+      <button type="submit" class="btn btn-success rounded-pill">JoinUs</button>
     </form>
 </div>

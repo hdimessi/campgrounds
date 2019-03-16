@@ -1,5 +1,10 @@
 <% include ../partials/header %>
 
+<% if(error != null && error.other != null) { %>
+<div class="alert <%= error.other.style %>" role="alert">
+  <%= error.other.content %>
+</div>
+<% } %>
 <div class="container">
   <header class="jumbotron">
     <h1>Welcome To YelpCamp!</h1>

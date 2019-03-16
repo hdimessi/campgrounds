@@ -8,11 +8,16 @@ express().use(bodyParser.urlencoded({ extended: true }));
 
 // INDEX - GET ALL CAMPGROUNDS
 router.get("/", function(req, res) {
+  var error = req.app.locals.error;
+  req.app.locals.error = null;
   Campground.find({}, function(err, campgrounds) {
     if (err) {
       console.log("err-->" + err);
     } else {
-      res.render("campgrounds/index", { campgrounds: campgrounds });
+      res.render("campgrounds/index", {
+        campgrounds: campgrounds,
+        error: error
+      });
     }
   });
 });
@@ -64,7 +69,10 @@ router.get("/:id", function(req, res) {
 });
 
 // EDIT CAMPGROUND ROUTE
-router.get("/:id/edit", middleware.verifyCampgroundOwnership, function(req, res) {
+router.get("/:id/edit", middleware.verifyCampgroundOwnership, function(
+  req,
+  res
+) {
   Campground.findById(req.params.id, function(err, foundCampground) {
     res.render("campgrounds/edit", { campground: foundCampground });
   });
